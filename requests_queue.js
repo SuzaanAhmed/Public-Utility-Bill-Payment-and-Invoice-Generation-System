@@ -8,7 +8,6 @@ class Bill_requests{
     }
     
     enque(bill){
-        let amnt=Number(bill.amount);
         this.req.push(bill);
     }
 
