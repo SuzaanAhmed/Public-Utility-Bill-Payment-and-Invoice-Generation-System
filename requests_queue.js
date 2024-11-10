@@ -1,7 +1,7 @@
 const {bills,total_budget}=require("./constants");
 class Bill_requests{
     constructor(){
-        this.queueIterator=0;
+        this.stackIterator=-1;
         this.req=[];
         this.payments=[];
         this.total_budget = total_budget;
@@ -25,6 +25,7 @@ class Bill_requests{
         this.total_budget-=amnt;
         console.log(`Paid ${amnt} for ${this.req[0].utility}`);
         console.log(`${this.total_budget} remaining in the budget`);
+        this.stackIterator++;
         this.payments.push(this.req[0]);
         this.req.shift();
     }
@@ -33,6 +34,30 @@ class Bill_requests{
         return this.req.forEach((r)=>{
             console.log(`${r.utility}: ${r.amount}`);
         });
+    }
+
+    checkStack(){
+        return this.payments;
+    }
+
+    undoStack(undo_point){
+        let target_point = this.stackIterator - undo_point;
+        /*To ensure that target point exists in the history*/
+        if (target_point < -1) {
+            console.log("Undo point exceeds available payment history.");
+            return;
+        }
+
+        while(this.stackIterator>target_point){
+            const lastPayment = this.payments[this.stackIterator];
+
+            this.total_budget+=Number(lastPayment.amount);
+            console.log(`${lastPayment.amount} refunded and ${lastPayment.utility} utility cancelled.`)
+            this.req.unshift(lastPayment);
+            this.payments.pop();
+            this.stackIterator--;
+        }
+        return;
     }
 }
 

@@ -30,15 +30,20 @@ function userPrompt(){
 
         case 3:
             const message = biller.deque();
-            if (message) {
+            if (message) 
                 console.log(message);
-            }
+            
+            break;
         case 4:
-            console.log("Stack check");            
+            console.log("Stack check");  
+            console.log(biller.checkStack());          
             break;
         case 5:
-            console.log("Exit check");
-            process.exit(0);
+            r1.question("Number of undos: ", (undo_point) => {
+                const undoMessage = biller.undoStack(parseInt(undo_point));
+                if (undoMessage) console.log(undoMessage);
+                userPrompt();  // Recursive call after handling the undo action
+            });
             break;
 
         default:
