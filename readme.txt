@@ -1,4 +1,4 @@
-#Backend mini-project: Public Utility Bill Payment and Invoice Generation System
+Backend mini-project: Public Utility Bill Payment and Invoice Generation System
 
 --------------------------------------------------------------------------------------------------
 
