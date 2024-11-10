@@ -28,11 +28,12 @@ function userPrompt(){
 
             case 3:
                 const message = biller.deque();
+
                 if (message) 
                     console.log(message);
                 
                 break;
-                
+
             case 4:
                 console.log("Stack check");  
                 console.log(biller.checkStack());          
@@ -49,7 +50,8 @@ function userPrompt(){
                 });
                 break;
 
-            default:
+            case 6:
+                console.log("Exiting now.")
                 break;
         }
         userPrompt();
