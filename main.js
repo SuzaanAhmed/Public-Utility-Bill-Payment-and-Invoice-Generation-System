@@ -51,7 +51,8 @@ function userPrompt(){
                 break;
 
             case 6:
-                console.log("Exiting now.")
+                console.log("Exiting now.");
+                process.exit(0);
                 break;
         }
         userPrompt();

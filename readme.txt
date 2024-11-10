@@ -1,4 +1,4 @@
-<h1>Backend mini-project: Public Utility Bill Payment and Invoice Generation System</h1>
+Backend mini-project: Public Utility Bill Payment and Invoice Generation System
 
 --------------------------------------------------------------------------------------------------
 
