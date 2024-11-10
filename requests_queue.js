@@ -51,7 +51,7 @@ class Bill_requests{
 
         this.req.sort((a, b) => a.priority - b.priority); // Sorting by ascending priority
         console.log("Queue sorted by priority:");
-        this.checkQueue();
+        this.Sort_Queue_byPriority();
     }
 
     Stack_CheckHistory(){
