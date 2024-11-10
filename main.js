@@ -53,7 +53,6 @@ function userPrompt(){
             case 6:
                 console.log("Exiting now.");
                 process.exit(0);
-                break;
         }
         userPrompt();
         /*Recursive call to the user instead of having to worry about looping difficluties*/
