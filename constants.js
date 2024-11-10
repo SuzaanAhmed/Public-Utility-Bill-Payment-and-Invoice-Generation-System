@@ -1,3 +1,4 @@
+//Seperate file for all constants really helps a lot.
 const bills = [
     { 
         id: 1,
