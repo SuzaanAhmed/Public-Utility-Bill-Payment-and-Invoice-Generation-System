@@ -26,16 +26,16 @@ function userPrompt(){
         switch (parseInt(selection)) {
             case 1:
                 bills.forEach((bill)=>{
-                    biller.enque(bill);
+                    biller.Enque_PaymentRequests(bill);
                 })
                 break;
 
             case 2:
-                console.log(biller.checkQueue());
+                console.log(biller.View_PaymentRequests_Queue());
                 break;
 
             case 3:
-                const message = biller.deque();
+                const message = biller.Deque_Payments();
 
                 if (message) 
                     console.log(message);
@@ -43,12 +43,12 @@ function userPrompt(){
                 break;
 
             case 4:
-                console.log(biller.checkStack());          
+                console.log(biller.Stack_CheckHistory());          
                 break;
 
             case 5:
                 user_input.question("Number of undos: ", (undo_point) => {
-                    const undoMessage = biller.undoStack(parseInt(undo_point));
+                    const undoMessage = biller.Stack_undoTransactions(parseInt(undo_point));
 
                     if (undoMessage) 
                         console.log(undoMessage);
@@ -58,7 +58,7 @@ function userPrompt(){
                 break;
             
             case 6:
-                biller.sortByPriority();
+                biller.Sort_Queue_byPriority();
                 break;    
 
             case 7:

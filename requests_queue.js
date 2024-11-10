@@ -7,11 +7,11 @@ class Bill_requests{
         this.total_budget = total_budget;
     }
     
-    enque(bill){
+    Enque_PaymentRequests(bill){
         this.req.push(bill);
     }
 
-    deque(){     
+    Deque_Payments(){     
         let amnt=Number(this.req[0].amount);
         
         if (this.req.length === 0) 
@@ -29,23 +29,23 @@ class Bill_requests{
         this.req.shift();
     }
 
-    checkQueue(){
+    View_PaymentRequests_Queue(){
         return this.req.forEach((r)=>{
             console.log(`${r.utility}: ${r.amount}`);
         });
     }
 
-    sortByPriority() {
+    Sort_Queue_byPriority() {
         this.req.sort((a, b) => a.priority - b.priority); // Sorting by ascending priority
         console.log("Queue sorted by priority:");
         this.checkQueue();
     }
 
-    checkStack(){
+    Stack_CheckHistory(){
         return this.payments;
     }
 
-    undoStack(undo_point){
+    Stack_undoTransactions(undo_point){
         let target_point = this.stackIterator - undo_point;
         /*To ensure that target point exists in the history*/
         if (target_point < -1) {
