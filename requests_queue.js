@@ -12,6 +12,9 @@ class Bill_requests{
     }
 
     Deque_Payments(){     
+        if (this.req.length === 0) 
+            return ("No bills in the queue to process.");
+
         let amnt=Number(this.req[0].amount);
         
         if (this.req.length === 0) 
@@ -30,22 +33,42 @@ class Bill_requests{
     }
 
     View_PaymentRequests_Queue(){
+        if (this.req.length === 0) {
+            console.log("The queue is currently empty.");
+            return;
+        }
+
         return this.req.forEach((r)=>{
             console.log(`${r.utility}: ${r.amount}`);
         });
     }
 
     Sort_Queue_byPriority() {
+        if (this.req.length === 0) {
+            console.log("The queue is empty, nothing to sort.");
+            return;
+        }
+
         this.req.sort((a, b) => a.priority - b.priority); // Sorting by ascending priority
         console.log("Queue sorted by priority:");
         this.checkQueue();
     }
 
     Stack_CheckHistory(){
+        if (this.payments.length === 0) {
+            console.log("No transactions in the history.");
+            return;
+        }
+
         return this.payments;
     }
 
     Stack_undoTransactions(undo_point){
+        if (this.payments.length === 0) {
+            console.log("No transactions to undo.");
+            return;
+        }
+
         let target_point = this.stackIterator - undo_point;
         /*To ensure that target point exists in the history*/
         if (target_point < -1) {
