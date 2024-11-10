@@ -13,13 +13,13 @@ const biller=new Bill_requests();
 /*Used while loop initially, before deciding to go recursive with userPrompt function.
 The main functionality of our mini-project recursively takes place in here. */
 function userPrompt(){
-    console.log("1: Get payment requests\n");
-    console.log("2: View Payment requests\n");
-    console.log("3: Make payment\n");
-    console.log("4: Check Transaction history\n");
-    console.log("5: Undo transactions\n");
-    console.log("6: Prioritise payment queue\n");
-    console.log("7: Exit\n");
+    console.log("1: Get payment requests");
+    console.log("2: View Payment requests");
+    console.log("3: Make payment");
+    console.log("4: Check Transaction history");
+    console.log("5: Undo transactions");
+    console.log("6: Prioritise payment queue");
+    console.log("7: Exit");
 
     /*Thanks to readline we can take inputs.*/
     user_input.question("Enter selection: ",(selection)=>{
