@@ -25,14 +25,12 @@ function userPrompt(){
     user_input.question("Enter selection: ",(selection)=>{
         switch (parseInt(selection)) {
             case 1:
-                console.log("Enque check");
                 bills.forEach((bill)=>{
                     biller.enque(bill);
                 })
                 break;
 
             case 2:
-                console.log("Queue check");
                 console.log(biller.checkQueue());
                 break;
 
@@ -45,7 +43,6 @@ function userPrompt(){
                 break;
 
             case 4:
-                console.log("Stack check");  
                 console.log(biller.checkStack());          
                 break;
 
