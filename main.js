@@ -41,8 +41,11 @@ function userPrompt(){
         case 5:
             r1.question("Number of undos: ", (undo_point) => {
                 const undoMessage = biller.undoStack(parseInt(undo_point));
-                if (undoMessage) console.log(undoMessage);
-                userPrompt();  // Recursive call after handling the undo action
+                
+                if (undoMessage) 
+                    console.log(undoMessage);
+                
+                userPrompt();  // Recursive call after undo
             });
             break;
 
