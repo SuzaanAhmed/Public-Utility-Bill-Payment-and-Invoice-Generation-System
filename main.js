@@ -69,9 +69,31 @@ const r1=readline.createInterface({
 
 const biller=new Bill_requests();
 
-while(1){
-    console.log("");
-    r1.question("Enter selection: ")
+function userPrompt(){
+    console.log("1: View Payment request queue\n2: Make payment\n3: Check Transaction history\n4: Exit");
+    r1.question("Enter selection: ",(selection)=>{
+    switch (parseInt(selection)) {
+        case 1:
+            console.log("Queue check");
+            
+            break;
+
+        case 2:
+            console.log("Deque check");            
+            break;
+        case 3:
+            console.log("Stack check");            
+            break;
+        case 4:
+            console.log("Exit check");
+            process.exit(0);
+            break;
+
+        default:
+            break;
+    }
+    userPrompt();
+});
 }
 
-r1.close();
+userPrompt();
