@@ -3,7 +3,7 @@ const Bill_requests=require("./requests_queue");
 
 /*Below is how to take inputs, readline module from node.js allows us to read inputs.*/
 const readline=require('node:readline')
-const r1=readline.createInterface({
+const user_input=readline.createInterface({
     input: process.stdin,
     output: process.stdout,
 });
@@ -19,10 +19,10 @@ function userPrompt(){
     console.log("4: Check Transaction history\n");
     console.log("5: Undo transactions\n");
     console.log("6: Prioritise payment queue\n");
-    console.log("7: Exit");
+    console.log("7: Exit\n");
 
     /*Thanks to readline we can take inputs.*/
-    r1.question("Enter selection: ",(selection)=>{
+    user_input.question("Enter selection: ",(selection)=>{
         switch (parseInt(selection)) {
             case 1:
                 console.log("Enque check");
@@ -50,7 +50,7 @@ function userPrompt(){
                 break;
 
             case 5:
-                r1.question("Number of undos: ", (undo_point) => {
+                user_input.question("Number of undos: ", (undo_point) => {
                     const undoMessage = biller.undoStack(parseInt(undo_point));
 
                     if (undoMessage) 
