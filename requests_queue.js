@@ -35,6 +35,12 @@ class Bill_requests{
         });
     }
 
+    sortByPriority() {
+        this.req.sort((a, b) => a.priority - b.priority); // Sorting by ascending priority
+        console.log("Queue sorted by priority:");
+        this.checkQueue();
+    }
+
     checkStack(){
         return this.payments;
     }

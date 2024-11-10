@@ -13,7 +13,7 @@ const biller=new Bill_requests();
 /*Used while loop initially, before deciding to go recursive with userPrompt function.
 The main functionality of our mini-project recursively takes place in here. */
 function userPrompt(){
-    console.log("1: Enque Payment requests\n2: View Payment request queue\n3: Make payment\n4: Check Transaction history\n5: Exit");
+    console.log("1: Enque Payment requests\n2: View Payment request queue\n3: Make payment\n4: Check Transaction history\n5: Undo transactions\n6: Prioritise\n7: Exit");
 
     /*Thanks to readline we can take inputs.*/
     r1.question("Enter selection: ",(selection)=>{
@@ -24,7 +24,7 @@ function userPrompt(){
                     biller.enque(bill);
                 })
                 break;
-                
+
             case 2:
                 console.log("Queue check");
                 console.log(biller.checkQueue());
@@ -53,8 +53,12 @@ function userPrompt(){
                     userPrompt();  // Recursive call after undo
                 });
                 break;
-
+            
             case 6:
+                biller.sortByPriority();
+                break;    
+
+            case 7:
                 console.log("Exiting now.");
                 process.exit(0);
         }
