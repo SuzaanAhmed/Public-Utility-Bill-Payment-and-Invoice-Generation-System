@@ -12,19 +12,18 @@ class Bill_requests{
     }
 
     Deque_Payments(){     
-        if (this.req.length === 0) 
-            return ("No bills in the queue to process.");
+        if (this.req.length === 0){ 
+            console.log("No bills in the queue to process.");
+            return;
+        }
 
-        let amnt=Number(this.req[0].amount);
-        
-        if (this.req.length === 0) 
-            return ("No bills in the queue to process.");
-        
-    
-        if (this.total_budget < amnt) 
-            return (`${this.total_budget} is not sufficient to pay ${amnt} for ${this.req[0].utility}`);
-        
+        let amnt=Number(this.req[0].amount);    
+        if (this.total_budget < amnt){ 
+            console.log(`${this.total_budget} is not sufficient to pay ${amnt} for ${this.req[0].utility}`);
+            return;    
+        }
         this.total_budget-=amnt;
+        
         console.log(`Paid ${amnt} for ${this.req[0].utility}`);
         console.log(`${this.total_budget} remaining in the budget`);
         this.stackIterator++;
