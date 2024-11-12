@@ -30,20 +30,20 @@ eventEmitter.on("viewRequests",()=>{
 });
 
 eventEmitter.on("makePayment",()=>{
-    const message = biller.Deque_Payments();
-
-
+    console.log("Making payments: ")
+    biller.Deque_Payments();
     userPrompt();
 });
 
 eventEmitter.on("viewHistory",()=>{
-    console.log("Transaction History:\n");
+    console.log("Transaction History: ");
     console.log(biller.Stack_CheckHistory());
     userPrompt();
 });
 
 eventEmitter.on("undoTransactions",()=>{
-    user_input.question("Number of undos: ",(undo_Point)=>{
+    user_input.question("Number of transactions to refund: ",(undo_Point)=>{
+        console.log(`${undo_Point} transactions refunded, utilities retracted.`)
         biller.Stack_undoTransactions(parseInt(undo_Point));
             userPrompt();
     });
@@ -51,6 +51,7 @@ eventEmitter.on("undoTransactions",()=>{
 });
 
 eventEmitter.on('prioritiseQueue', () => {
+    console.log("Sorting the payment requests as per the priority.")
     biller.Sort_Queue_byPriority();
     userPrompt();
 });
