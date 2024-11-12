@@ -86,9 +86,7 @@ function userPrompt(){
             default:
                 console.log("Invalid selection. Please try again.");
                 userPrompt();         
-                /*Recursive call to the user instead of having to worry about looping difficluties*/
         }
-
     });
 }
 
