@@ -76,6 +76,7 @@ function userPrompt(){
     /*Thanks to readline we can take inputs.*/
     user_input.question("Enter selection: ",(selection)=>{
         switch (parseInt(selection)) {
+            /*Emits the above events based on user input*/
             case 1: eventEmitter.emit('getRequests');
             case 2: eventEmitter.emit('viewRequests');
             case 3: eventEmitter.emit('makePayment');
