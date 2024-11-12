@@ -1,6 +1,8 @@
 const {bills,total_budget}=require("./constants");
 const Bill_requests=require("./requests_queue");
 
+const biller=new Bill_requests();
+
 const EventEmitter=require('events');
 const eventEmitter=new EventEmitter();
 
@@ -11,12 +13,8 @@ const user_input=readline.createInterface({
     output: process.stdout,
 });
 
-
-const biller=new Bill_requests();
-
 /*Below are Triggers. Fixes the bug in "userPrompt", Switch case 5, where the menu re-prints before 
 taking in "Number of Undo's". No idea why it works, but it works.*/
-
 eventEmitter.on("getRequests",()=>{
     bills.forEach((bill)=>{
         biller.Enque_PaymentRequests(bill);
