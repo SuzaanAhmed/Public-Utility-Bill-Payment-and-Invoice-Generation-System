@@ -1,5 +1,5 @@
 const {bills,total_budget}=require("./constants");
-const Bill_requests=require("./requests_queue");
+const Bill_requests=require("./requests");
 
 const biller=new Bill_requests();
 
