@@ -78,32 +78,18 @@ function userPrompt(){
     user_input.question("Enter selection: ",(selection)=>{
         switch (parseInt(selection)) {
             case 1: eventEmitter.emit('getRequests');
-            break;
-
             case 2: eventEmitter.emit('viewRequests');
-            break;
-
             case 3: eventEmitter.emit('makePayment');
-            break;
-
             case 4: eventEmitter.emit('viewHistory');
-            break;
-
             case 5: eventEmitter.emit('undoTransactions');
-            break;
-
             case 6: eventEmitter.emit('prioritiseQueue');
-            break;
-
             case 7: eventEmitter.emit('exit');
-            break;
-
             default:
                 console.log("Invalid selection. Please try again.");
-                userPrompt();
-                break;
+                userPrompt();         
+                /*Recursive call to the user instead of having to worry about looping difficluties*/
         }
-        /*Recursive call to the user instead of having to worry about looping difficluties*/
+
     });
 }
 
