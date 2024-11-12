@@ -69,12 +69,13 @@ class Bill_requests{
         }
 
         let target_point = this.stackIterator - undo_point;
-        /*To ensure that target point exists in the history*/
+        /*To ensure that target point exists in the history, i.e that many number of transactions must have happened*/
         if (target_point < -1) {
             console.log("Undo point exceeds available payment history.");
             return;
         }
 
+        /*The loop iterates till the stackIterator has reached the target point*/
         while(this.stackIterator>target_point){
             const lastPayment = this.payments[this.stackIterator];
 
