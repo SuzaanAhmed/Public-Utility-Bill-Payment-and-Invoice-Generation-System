@@ -77,12 +77,12 @@ function userPrompt(){
     user_input.question("Enter selection: ",(selection)=>{
         switch (parseInt(selection)) {
             /*Emits the above events based on user input*/
-            case 1: eventEmitter.emit('getRequests');
-            case 2: eventEmitter.emit('viewRequests');
-            case 3: eventEmitter.emit('makePayment');
-            case 4: eventEmitter.emit('viewHistory');
-            case 5: eventEmitter.emit('undoTransactions');
-            case 6: eventEmitter.emit('prioritiseQueue');
+            case 1: eventEmitter.emit('getRequests'); break;
+            case 2: eventEmitter.emit('viewRequests'); break;
+            case 3: eventEmitter.emit('makePayment'); break;
+            case 4: eventEmitter.emit('viewHistory'); break;
+            case 5: eventEmitter.emit('undoTransactions'); break;
+            case 6: eventEmitter.emit('prioritiseQueue'); break;
             case 7: eventEmitter.emit('exit');
             default:
                 console.log("Invalid selection. Please try again.");
